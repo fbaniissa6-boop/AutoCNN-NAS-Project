@@ -13,3 +13,19 @@ def create_data_generator(target_size=(28, 28))
 
 if __name__ == __main__
     create_data_generator()
+
+
+   
+     def load_external_data(folder_path):
+    # هذا الكود يتيح للمشروع قراءة أي صور من مجلد خارجي (مثل صور المعدات)
+    # وتحويلها لتنسيق يفهمه الـ Agent
+    datagen = create_data_generator()
+    
+    external_data = datagen.flow_from_directory(
+        folder_path,
+        target_size=(28, 28),
+        batch_size=32,
+        class_mode='categorical'
+    )
+    print("تم ربط المجلد الخارجي بنجاح!")
+    return external_data
