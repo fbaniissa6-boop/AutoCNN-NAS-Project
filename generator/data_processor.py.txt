@@ -1,0 +1,15 @@
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+def create_data_generator(target_size=(28, 28))
+    # هذا الكود يقوم بمعالجة الصور لتتناسب مع أي Data Set خارجية
+    datagen = ImageDataGenerator(
+        rescale=1.255,        # تطبيع الصور
+        rotation_range=10,     # تدوير عشوائي لزيادة البيانات
+        zoom_range=0.1         # تكبير بسيط
+    )
+    print(fتم إعداد معالج الصور لأبعاد {target_size})
+    return datagen
+
+if __name__ == __main__
+    create_data_generator()
