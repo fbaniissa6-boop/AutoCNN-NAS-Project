@@ -29,3 +29,17 @@ if __name__ == __main__
     )
     print("تم ربط المجلد الخارجي بنجاح!")
     return external_data
+
+    import tensorflow as tf
+
+# دالة بتبني طبقة CNN بناءً على قرار الـ Agent
+def build_simple_layer(filter_count):
+    # بنعمل طبقة وحدة حالياً كبداية للأسبوع التاسع
+    model_layer = tf.keras.layers.Conv2D(
+        filters=filter_count, 
+        kernel_size=(3, 3), 
+        activation='relu', 
+        input_shape=(28, 28, 1)
+    )
+    print(f"--- Layer built with {filter_count} filters successfully ---")
+    return model_layer
